@@ -1,7 +1,10 @@
 {
   "name": "html-document-fragment-element",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple custom element that does like a DocumentFragment.",
+  "keywords": [
+    "web-components"
+  ],
   "main": "dist/HTMLDocumentFragmentElement.js",
   "files": [
     "dist"
@@ -27,5 +30,5 @@
   "engines": {
     "node": "^14.16.0"
   },
-  "homepage": "https://github.com/heppokofrontend/html-document-fragment-elementreadme"
+  "homepage": "https://github.com/heppokofrontend/html-document-fragment-element#readme"
 }
