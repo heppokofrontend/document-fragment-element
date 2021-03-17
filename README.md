@@ -1,0 +1,3 @@
+# The document fragment custom element
+
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE) <!-- [![Build Status](https://travis-ci.org/heppokofrontend/document-fragment-element.svg?branch=master)](https://travis-ci.org/heppokofrontend/document-fragment-element) --> [![Maintainability](https://api.codeclimate.com/v1/badges/dbbddae9683e57d4839b/maintainability)](https://codeclimate.com/github/heppokofrontend/document-fragment-element/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/dbbddae9683e57d4839b/test_coverage)](https://codeclimate.com/github/heppokofrontend/document-fragment-element/test_coverage)
