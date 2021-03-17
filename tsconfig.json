@@ -11,6 +11,9 @@
     "types": [
       "jest",
       "node"
-    ],
-  }
+    ]
+  },
+  "include": [
+    "./src/**/*.ts"
+  ]
 }
