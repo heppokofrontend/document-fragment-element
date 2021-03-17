@@ -10,7 +10,8 @@
     "start": "tsc -w",
     "prestart": "git config commit.template .gitmessage",
     "build": "tsc",
-    "test": "jest --watch",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch --caverage",
     "prepublishOnly": "npm run build"
   },
   "author": "heppokofrontend",
