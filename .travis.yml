@@ -1,3 +1,13 @@
+env:
+  global:
+    # https://github.com/codeclimate/ruby-test-reporter/issues/34
+    - CC_TEST_REPORTER_ID=f48a8aba5e1bf89ec789425b6be76618c5ba007344235aa5c27bb8b5075be882
 language: node_js
 node_js:
   - "14"
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
