@@ -1,4 +1,4 @@
-require('./HTMLDocumentFragmentElement');
+require('../src/HTMLDocumentFragmentElement');
 
 test('Basic usege', () => {
   document.body.innerHTML = `
