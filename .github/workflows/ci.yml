@@ -6,6 +6,7 @@ on:
     paths:
       - '**.ts'
       - '**.json'
+      - '**.yml'
   pull_request:
     paths:
       - '!*.md'
@@ -14,7 +15,7 @@ jobs:
     strategy:
       matrix:
         # platform: [ windows-latest, macOS-latest ]
-        platform: ubuntu-latest
+        platform: [ ubuntu-latest ]
         node: [ '14' ]
     name: test/node ${{ matrix.node }}/${{ matrix.platform }}
     runs-on: ${{ matrix.platform }}
