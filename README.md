@@ -1,8 +1,6 @@
 # &lt;document-fragment&gt;
 
-[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE) [![Published on NPM](https://img.shields.io/npm/v/@polymer/iron-icons.svg)](https://www.npmjs.com/package/html-document-fragment-element) <!-- [![Build Status](https://travis-ci.org/heppokofrontend/document-fragment-element.svg?branch=master)](https://travis-ci.org/heppokofrontend/document-fragment-element) --> [![Maintainability](https://api.codeclimate.com/v1/badges/dbbddae9683e57d4839b/maintainability)](https://codeclimate.com/github/heppokofrontend/document-fragment-element/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/dbbddae9683e57d4839b/test_coverage)](https://codeclimate.com/github/heppokofrontend/document-fragment-element/test_coverage)
-
------
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE) [![Published on NPM](https://img.shields.io/npm/v/@polymer/iron-icons.svg)](https://www.npmjs.com/package/html-document-fragment-element) <!-- [![Build Status](https://travis-ci.com/heppokofrontend/html-document-fragment-element.svg?branch=master)](https://travis-ci.com/heppokofrontend/html-document-fragment-element) --> [![Maintainability](https://api.codeclimate.com/v1/badges/307603c1cde8a74cc866/maintainability)](https://codeclimate.com/github/heppokofrontend/html-document-fragment-element/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/307603c1cde8a74cc866/test_coverage)](https://codeclimate.com/github/heppokofrontend/html-document-fragment-element/test_coverage)
 
 The document fragment custom element is a simple custom element that does like a DocumentFragment.
 
