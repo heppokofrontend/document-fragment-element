@@ -1,4 +1,4 @@
-type AcceptedTypes = string | string[] | Node | Node[] | NodeList;
+type AcceptedTypes = string | Node | (string | Node | AcceptedTypes)[] | NodeList | HTMLCollection;
 
 export default class HTMLDocumentFragmentElement extends HTMLElement {
   /**
