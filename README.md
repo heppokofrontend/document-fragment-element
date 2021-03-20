@@ -6,12 +6,31 @@ The document fragment custom element is a simple custom element that does like a
 
 ## Usage
 
-### Installation
+### In browser
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>html-document-fragment-element in the browser</title>
+  <script src="https://cdn.jsdelivr.net/npm/html-document-fragment-element@0.2.0/lib/index.min.js"></script>
+</head>
+<body>
+  <script>
+    // code...
+  </script>
+</body>
+</html>
+```
+
+### In development
+
+Installation:
 
 ```shell
 npm install --save html-document-fragment-element
 ```
-### Use replaceWith with some elements
+#### Use replaceWith with some elements
 
 html:
 
@@ -37,14 +56,14 @@ dfElm.insertAdjacentHTML('afterbegin', `
 target.replaceWith(dfElm);
 ```
 
-Result:
+Result HTML:
 
 ```html
     <p>element 1</p>
     <p>element 2</p>
 ```
 
-### Parse the string as DOM then append to the page.
+#### Parse the string as DOM then append to the page.
 
 This is example of way to add two p elements as children of the body element.
 
@@ -80,6 +99,36 @@ dfElm.insertAdjacentHTML('afterbegin', markup);
 document.body.append(dfElm);
 ```
 
+#### Use as constructor 
+
+```js
+import { HTMLDocumentFragmentElement } from 'html-document-fragment-element';
+
+const dfElm = new HTMLDocumentFragmentElement();
+```
+
+##### Syntax
+
+```javascript
+new HTMLDocumentFragmentElement(content, [...content]);
+
+new HTMLDocumentFragmentElement(contents);
+```
+
+##### Parameters
+
+Arguments are implicitly converted to strings if they are not objects.
+
+###### `content`
+
+The element is initialized with the given `string` or `Node` as `childNode`.
+
+##### `contents`
+
+The element is initialized with the given something as `childNode`.
+
+The types are allowed `string`, `Node`, `NodeList`, `HTMLCollection` and arrays containing them.
+
 ## Contributing
 
 1. Fork it!
@@ -87,12 +136,6 @@ document.body.append(dfElm);
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
-
-## History
-
-### 0.1.0
-
-Initial release.
 
 ## License
 
