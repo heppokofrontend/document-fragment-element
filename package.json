@@ -25,14 +25,17 @@
     "node": "^14.16.0"
   },
   "files": [
-    "dist"
+    "dist",
+    "lib"
   ],
   "homepage": "https://github.com/heppokofrontend/html-document-fragment-element#readme",
   "keywords": [
-    "web-components"
+    "web-components",
+    "custom-elements",
+    "DocumentFragment"
   ],
   "license": "MIT",
-  "main": "dist/HTMLDocumentFragmentElement.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/heppokofrontend/document-fragment-element.git"
