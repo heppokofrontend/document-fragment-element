@@ -1,4 +1,4 @@
-import '../src/index';
+import { HTMLDocumentFragmentElement } from '../src/index';
 
 test('Basic usege', () => {
   document.body.innerHTML = `
@@ -59,4 +59,66 @@ test('createElement', () => {
   expect(df.firstElementChild).toBeNull();
   expect(df.innerHTML).toBe('');
   expect(document.body.firstElementChild?.tagName.toLowerCase()).toBe('p');
+});
+
+
+test('Use arguments', () => {
+  describe('a string', () => {
+    const elm = new HTMLDocumentFragmentElement('text');
+
+    expect(elm.textContent).toBe('text');
+  });
+
+
+  describe('multiple arguments', () => {
+    const elm = new HTMLDocumentFragmentElement(`
+        text
+        <p>text</p>
+      `,
+      document.createElement('div'),
+      'text2'
+    );
+
+    expect(elm.children.length).toBe(2);
+    expect(elm.children[0]?.tagName.toLowerCase()).toBe('p');
+    expect(elm.children[1]?.tagName.toLowerCase()).toBe('div');
+  });
+
+
+  describe('deep argument', () => {
+    const div = document.createElement('div');
+
+    div.innerHTML = `
+      <p></p>
+      <p></p>
+      <document-fragment>
+      <p></p>
+      </document-fragment>
+      <p></p>
+      <div></div>
+    `;
+
+    const elm = new HTMLDocumentFragmentElement([
+      `
+        text
+        <p>text</p>
+      `,
+      document.createElement('div'),
+      'text2',
+    ],
+    div.children,
+    [
+      [
+        [
+          'last',
+        ]
+      ]
+    ]
+    );
+
+    expect(elm.children.length).toBe(7);
+    expect(elm.children[0]?.tagName.toLowerCase()).toBe('p');
+    expect(elm.children[1]?.tagName.toLowerCase()).toBe('div');
+    expect(elm.lastChild.textContent).toBe('last');
+  });
 });
