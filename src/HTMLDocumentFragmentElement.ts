@@ -1,4 +1,4 @@
-export class HTMLDocumentFragmentElement extends HTMLElement {
+export default class HTMLDocumentFragmentElement extends HTMLElement {
   connectedCallback() {
     const fragment = document.createDocumentFragment();
     const childNodes = [...this.childNodes];
@@ -10,3 +10,8 @@ export class HTMLDocumentFragmentElement extends HTMLElement {
     this.replaceWith(fragment);
   }
 }
+
+// コンストラクタ名が難読化で変わってしまうため
+Object.defineProperty(HTMLDocumentFragmentElement, 'name', {
+  value: 'HTMLDocumentFragmentElement',
+});

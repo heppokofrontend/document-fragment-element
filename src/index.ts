@@ -1,5 +1,5 @@
-import { HTMLDocumentFragmentElement } from './HTMLDocumentFragmentElement';
+import CustomElementConstructor from './HTMLDocumentFragmentElement';
 
-customElements.define('document-fragment', HTMLDocumentFragmentElement);
+customElements.define('document-fragment', CustomElementConstructor);
 
-export default HTMLDocumentFragmentElement;
+export const HTMLDocumentFragmentElement = CustomElementConstructor;

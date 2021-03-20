@@ -1,13 +1,14 @@
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
   entry: './src/index.ts',
   output: {
     path: path.join(__dirname, 'lib'),
-    filename: 'index.js',
+    filename: 'index.min.js',
     library: 'HTMLDocumentFragmentElement',
-    libraryExport: 'default',
-    libraryTarget: 'this',
+    libraryExport: 'HTMLDocumentFragmentElement',
+    libraryTarget: 'window',
   },
   resolve: {
     extensions: ['.ts'],
