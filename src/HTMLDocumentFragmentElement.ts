@@ -1,4 +1,4 @@
-class HTMLDocumentFragmentElement extends HTMLElement {
+export class HTMLDocumentFragmentElement extends HTMLElement {
   connectedCallback() {
     const fragment = document.createDocumentFragment();
     const childNodes = [...this.childNodes];
@@ -10,5 +10,3 @@ class HTMLDocumentFragmentElement extends HTMLElement {
     this.replaceWith(fragment);
   }
 }
-
-customElements.define('document-fragment', HTMLDocumentFragmentElement);
