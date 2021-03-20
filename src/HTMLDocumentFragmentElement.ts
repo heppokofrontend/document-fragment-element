@@ -32,12 +32,12 @@ export default class HTMLDocumentFragmentElement extends HTMLElement {
     this.replaceWith(fragment);
   }
 
-  constructor(...arg: AcceptedTypes[]) {
+  constructor(...contents: AcceptedTypes[]) {
     super();
 
-    const contents = HTMLDocumentFragmentElement.flat([...arg]);
+    const items = HTMLDocumentFragmentElement.flat([...contents]);
 
-    for (const content of contents) {
+    for (const content of items) {
       if (typeof content === 'object') {
         try {
           this.appendChild(content);
