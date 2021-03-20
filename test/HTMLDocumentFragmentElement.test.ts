@@ -37,9 +37,7 @@ test('Nesting', () => {
   expect(document.body.children.length).toBe(8);
 
   describe('string', () => {
-    const str = [...document.querySelectorAll('p')].map(p => {
-      return p.textContent;
-    }).join('');
+    const str = [...document.querySelectorAll('p')].map(p => p.textContent).join('');
 
     expect(str).toBe('12345678');
   });
@@ -60,4 +58,5 @@ test('createElement', () => {
 
   expect(df.firstElementChild).toBeNull();
   expect(df.innerHTML).toBe('');
+  expect(document.body.firstElementChild?.tagName.toLowerCase()).toBe('p');
 });
