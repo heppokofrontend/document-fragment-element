@@ -18,7 +18,11 @@ class HTMLDocumentFragmentElement extends HTMLElement {
         return loop(arg);
     }
     ;
-    connectedCallback() {
+    /**
+     * Move the childNodes of that document-fragment element to
+     * the DocumentFragment and expose that fragment instead of this element to the DOM.
+     */
+    putOut() {
         const fragment = document.createDocumentFragment();
         const childNodes = [...this.childNodes];
         for (const node of childNodes) {
@@ -26,9 +30,21 @@ class HTMLDocumentFragmentElement extends HTMLElement {
         }
         this.replaceWith(fragment);
     }
+    connectedCallback() {
+        if (document.readyState === 'loading') { // Loading hasn't finished yet
+            document.addEventListener('DOMContentLoaded', () => this.putOut());
+            return;
+        }
+        this.putOut();
+    }
     constructor(...contents) {
         super();
-        const items = HTMLDocumentFragmentElement.flat([...contents]);
+        const items = (() => {
+            if (contents.length === 0) {
+                return [...this.childNodes];
+            }
+            return HTMLDocumentFragmentElement.flat([...contents]);
+        })();
         for (const content of items) {
             if (typeof content === 'object') {
                 try {

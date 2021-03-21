@@ -6,6 +6,11 @@ export default class HTMLDocumentFragmentElement extends HTMLElement {
      * @returns - Completely Flattened array
      */
     private static flat;
+    /**
+     * Move the childNodes of that document-fragment element to
+     * the DocumentFragment and expose that fragment instead of this element to the DOM.
+     */
+    private putOut;
     connectedCallback(): void;
     constructor(...contents: AcceptedTypes[]);
 }
