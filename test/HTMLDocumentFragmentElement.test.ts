@@ -119,6 +119,6 @@ test('Use arguments', () => {
     expect(elm.children.length).toBe(7);
     expect(elm.children[0]?.tagName.toLowerCase()).toBe('p');
     expect(elm.children[1]?.tagName.toLowerCase()).toBe('div');
-    expect(elm.lastChild.textContent).toBe('last');
+    expect(elm.lastChild?.textContent).toBe('last');
   });
 });
