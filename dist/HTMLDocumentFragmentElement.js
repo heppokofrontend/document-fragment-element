@@ -1,23 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class HTMLDocumentFragmentElement extends HTMLElement {
+/**
+ * Flatten iterable object
+ * @param arg - Arguments received in the constructor
+ * @returns - Completely Flattened array
+ */
+const flat = (arg) => {
     /**
-     * Flatten iterable object
-     * @param arg - Arguments received in the constructor
-     * @returns - Completely Flattened array
+     * @param items - Arguments received in the constructor
+     * @returns - Flattened array
      */
-    static flat(arg) {
-        /**
-         * @param items - Arguments received in the constructor
-         * @returns - Flattened array
-         */
-        const loop = (items) => {
-            return items.reduce((previous, current) => previous.concat(typeof current !== 'string' && current[Symbol.iterator] ?
-                loop([...current]) : current), []);
-        };
-        return loop(arg);
-    }
-    ;
+    const loop = (items) => {
+        return items.reduce((previous, current) => previous.concat(typeof current !== 'string' && current[Symbol.iterator] ?
+            loop([...current]) : current), []);
+    };
+    return loop(arg);
+};
+class HTMLDocumentFragmentElement extends HTMLElement {
     /**
      * Move the childNodes of that document-fragment element to
      * the DocumentFragment and expose that fragment instead of this element to the DOM.
@@ -39,12 +38,7 @@ class HTMLDocumentFragmentElement extends HTMLElement {
     }
     constructor(...contents) {
         super();
-        const items = (() => {
-            if (contents.length === 0) {
-                return [...this.childNodes];
-            }
-            return HTMLDocumentFragmentElement.flat([...contents]);
-        })();
+        const items = flat([...contents]);
         for (const content of items) {
             if (typeof content === 'object') {
                 try {
