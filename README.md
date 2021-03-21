@@ -1,6 +1,6 @@
 # &lt;document-fragment&gt;
 
-[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE) [![Published on NPM](https://img.shields.io/npm/v/html-document-fragment-element.svg)](https://www.npmjs.com/package/html-document-fragment-element) [![Maintainability](https://api.codeclimate.com/v1/badges/de7f3242b44531ac8fa7/maintainability)](https://codeclimate.com/github/heppokofrontend/html-document-fragment-element/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/de7f3242b44531ac8fa7/test_coverage)](https://codeclimate.com/github/heppokofrontend/html-document-fragment-element/test_coverage)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE) [![Published on NPM](https://img.shields.io/npm/v/html-document-fragment-element.svg)](https://www.npmjs.com/package/html-document-fragment-element) [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/html-document-fragment-element) [![Maintainability](https://api.codeclimate.com/v1/badges/de7f3242b44531ac8fa7/maintainability)](https://codeclimate.com/github/heppokofrontend/html-document-fragment-element/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/de7f3242b44531ac8fa7/test_coverage)](https://codeclimate.com/github/heppokofrontend/html-document-fragment-element/test_coverage)
 
 The document fragment custom element is a simple custom element that does like a DocumentFragment.
 
@@ -13,7 +13,7 @@ The document fragment custom element is a simple custom element that does like a
 <html>
 <head>
   <title>html-document-fragment-element in the browser</title>
-  <script src="https://cdn.jsdelivr.net/npm/html-document-fragment-element@0.2.2/lib/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html-document-fragment-element@0.2.3/lib/index.min.js"></script>
 </head>
 <body>
   <script>
@@ -130,7 +130,7 @@ Arguments are implicitly converted to strings if they are not objects.
 
 The element is initialized with the given `string` or `Node` as `childNode`.
 
-##### `contents`
+###### `contents`
 
 The element is initialized with the given something as `childNode`.
 
