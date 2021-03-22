@@ -38,7 +38,7 @@ class HTMLDocumentFragmentElement extends HTMLElement {
     }
     constructor(...contents) {
         super();
-        const items = flat([...contents]);
+        const items = flat(contents);
         for (const content of items) {
             if (typeof content === 'object') {
                 try {

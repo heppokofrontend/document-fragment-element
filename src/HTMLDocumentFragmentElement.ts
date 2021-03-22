@@ -49,7 +49,7 @@ export default class HTMLDocumentFragmentElement extends HTMLElement {
   constructor(...contents: AcceptedTypes[]) {
     super();
 
-    const items = flat([...contents]);
+    const items = flat(contents);
 
     for (const content of items) {
       if (typeof content === 'object') {
