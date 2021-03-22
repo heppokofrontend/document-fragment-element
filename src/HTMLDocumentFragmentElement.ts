@@ -36,6 +36,23 @@ export default class HTMLDocumentFragmentElement extends HTMLElement {
     this.replaceWith(fragment);
   }
 
+  /**
+   * @param content - Content that you want to add to your own child elements
+   */
+  private add(content: string | Node) {
+    if (typeof content === 'object') {
+      try {
+        this.appendChild(content);
+      } catch (e) {
+        throw new TypeError(`The ${String(content)} cannot be included in a HTMLDocumentFragmentElement. Only Node or Element is allowed.`);
+      }
+
+      return;
+    }
+
+    this.insertAdjacentHTML('beforeend', content);
+  }
+
   connectedCallback() {
     if (document.readyState === 'loading') {  // Loading hasn't finished yet
       document.addEventListener('DOMContentLoaded', () => this.putOut());
@@ -52,15 +69,7 @@ export default class HTMLDocumentFragmentElement extends HTMLElement {
     const items = flat(contents);
 
     for (const content of items) {
-      if (typeof content === 'object') {
-        try {
-          this.appendChild(content);
-        } catch (e) {
-          throw new TypeError(`The ${String(content)} cannot be included in a HTMLDocumentFragmentElement. Only Node or Element is allowed.`);
-        }
-      } else {
-        this.insertAdjacentHTML('beforeend', content);
-      }
+      this.add(content);
     }
   }
 }
