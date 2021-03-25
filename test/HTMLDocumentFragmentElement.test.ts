@@ -61,7 +61,6 @@ test('createElement', () => {
   expect(document.body.firstElementChild?.tagName.toLowerCase()).toBe('p');
 });
 
-
 test('Use arguments', () => {
   describe('a string', () => {
     const elm = new HTMLDocumentFragmentElement('text');
@@ -121,4 +120,32 @@ test('Use arguments', () => {
     expect(elm.children[1]?.tagName.toLowerCase()).toBe('div');
     expect(elm.lastChild?.textContent).toBe('last');
   });
+
+  describe('Unmatched types', () => {
+    expect(() => new HTMLDocumentFragmentElement({} as any)).toThrow();
+    expect(() => new HTMLDocumentFragmentElement(new Promise(r => r) as any)).toThrow();
+  });
+});
+
+test('DOMContentLoad event has not been called yet', () => {
+  Object.defineProperty(document, 'readyState', {
+    get() { return 'loading'; }
+  });
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(`
+    <document-fragment>
+      <p>test message 1</p>
+      <p>test message 2</p>
+    </document-fragment>
+  `, 'text/html');
+
+  expect(document.readyState).toBe('loading');
+
+  document.body.replaceWith(doc.body);
+
+  expect(document.body.children.length).toBe(1);
+
+  document.dispatchEvent(new Event('DOMContentLoaded'));
+
+  expect(document.body.children.length).toBe(2);
 });
