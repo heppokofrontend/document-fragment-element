@@ -15,7 +15,7 @@ The document fragment custom element is a simple custom element that does like a
 <html>
 <head>
   <title>html-document-fragment-element in the browser</title>
-  <script src="https://cdn.jsdelivr.net/npm/html-document-fragment-element@0.2.5/lib/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html-document-fragment-element@0.2.6/lib/index.min.js"></script>
 </head>
 <body>
   <script>
