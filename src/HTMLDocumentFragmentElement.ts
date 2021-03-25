@@ -40,7 +40,10 @@ export default class HTMLDocumentFragmentElement extends HTMLElement {
    * @param content - Content that you want to add to your own child elements
    */
   private add(content: string | Node) {
-    if (typeof content === 'object') {
+    if (
+      content &&
+      typeof content === 'object'
+    ) {
       try {
         this.appendChild(content);
       } catch (e) {
