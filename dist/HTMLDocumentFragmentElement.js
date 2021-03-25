@@ -33,7 +33,8 @@ class HTMLDocumentFragmentElement extends HTMLElement {
      * @param content - Content that you want to add to your own child elements
      */
     add(content) {
-        if (typeof content === 'object') {
+        if (content &&
+            typeof content === 'object') {
             try {
                 this.appendChild(content);
             }
