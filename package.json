@@ -1,7 +1,7 @@
 {
   "name": "html-document-fragment-element",
   "description": "A simple custom element that does like a DocumentFragment.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "heppokofrontend",
   "bugs": {
     "url": "https://github.com/heppokofrontend/html-document-fragment-element/issues"
